@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# ./docker-vagrant experimental help
+#
+
+help() {
+  echo 'Usage: docker-vagrant ENVIRONMENT COMMAND'
+  echo 'Example: docker-vagrant experimental version'
+  exit 1
+}
+
+if test -z "$1" || test -z "$2"; then
+  help
+fi
+
+vagrant ssh "$1" -c "docker ${*:2}" 2> /dev/null
