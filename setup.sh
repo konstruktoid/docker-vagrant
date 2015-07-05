@@ -3,7 +3,7 @@
 case "$(hostname -s)" in
   (stable*) curl -sSL https://get.docker.com/ | sh ;;
   (experimental*) curl -sSL https://experimental.docker.com/ | sh ;;
-  (*)   echo "Unknown hostname" ;;
+  (*) echo "Unknown hostname" ;;
 esac
 
 usermod -aG docker vagrant

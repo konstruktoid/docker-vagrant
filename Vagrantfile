@@ -16,6 +16,5 @@ Vagrant.configure(2) do |config|
   config.vm.define "experimental" do |experimental|
     experimental.vm.network :private_network, ip: "192.168.10.15"
     experimental.vm.hostname = "experimental"
-    experimental.vm.network :forwarded_port, guest: 80, host: 8080
   end
 end
